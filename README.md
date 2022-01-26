@@ -45,6 +45,38 @@ $ npm run start
 $ npm run start:dev
 ```
 
+## cURL requests
+### POST /package
+```
+curl --location --request POST 'http://localhost:3000/package' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"name": "Service One",
+"description": "Service One description."
+} 
+```
+
+```
+curl --location --request POST 'http://localhost:3000/package' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"name": "Service Two",
+"description": "Service Two description."
+}'
+```
+
+### GET /package
+```
+curl --location --request GET 'http://localhost:3000/packages?page=1&take=2&search_text=one'
+```
+
+### GET /package/:id/versions
+```
+curl --location --request GET 'http://localhost:3000/packages/b7fda60c-e698-4570-9124-e34755cf24c0/versions?page=1&take=2&search_text=serv'
+```
+
+
+
 ## Test
 
 ```bash
